@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Get Started - Python Project</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: #fff;
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin: 0.5rem 0 1.5rem;
+        }
+
+        .content {
+            padding: 2rem 0;
+        }
+
+        .content h2 {
+            margin-bottom: 1rem;
+        }
+
+        .steps {
+            margin-top: 1rem;
+        }
+
+        .steps li {
+            margin: 1rem 0;
+            padding: 0.5rem;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .steps li code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            color: #24292e;
+            font-weight: bold;
+            font-family: monospace;
+        }
+
+        .copy-btn {
+            margin-left: 1rem;
+            padding: 0.3rem 0.5rem;
+            background-color: #24292e;
+            color: white;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            cursor: pointer;
+        }
+
+        .copy-btn:hover {
+            background-color: #444;
+        }
+
+        .requirements,
+        .troubleshooting {
+            margin-top: 2rem;
+        }
+
+        .requirements ul,
+        .troubleshooting ul {
+            list-style-type: disc;
+            margin-left: 2rem;
+        }
+
+        .github {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .github a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #24292e;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .github a:hover {
+            background: #444;
+        }
+        .docs {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .docs a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #018f52;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .docs a:hover {
+            background: #14c678;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem 0;
+        }
+
+        footer a {
+            color: #4caf50;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Get Started with HandyTools</h1>
+            <p>Follow these simple steps to install and use the project on your system.</p>
+        </div>
+    </header>
+
+    <section class="content container">
+        <h2>Installation Guide</h2>
+        <ol class="steps">
+            <li>
+                <strong>Step 1:</strong> Clone the GitHub repository:
+                <pre><code>git clone https://github.com/CyberCookieDev/handytools.git</code></pre>
+                <button class="copy-btn" onclick="copyToClipboard('git clone https://github.com/CyberCookieDev/handytools.git')">Copy</button>
+            </li>
+            <li>
+                <strong>Step 2:</strong> Navigate to the project folder:
+                <pre><code>cd cd handytools</code></pre>
+                <button class="copy-btn" onclick="copyToClipboard('cd handytools')">Copy</button>
+            </li>
+            <li>
+                <strong>Step 3:</strong> Install dependencies (ensure you have Python and pip installed):
+                <pre><code>pip install -r requirements.txt</code></pre>
+                <button class="copy-btn" onclick="copyToClipboard('pip install -r requirements.txt')">Copy</button>
+            </li>
+            <li>
+                <strong>Step 4:</strong> Navigate to internal code directory and un the application:
+                <pre><code>main_code.py</code></pre>
+                <button class="copy-btn" onclick="copyToClipboard('main_code.py')">Copy</button>
+            </li>
+        </ol>
+        <div class="github">
+            <a href="https://github.com/CyberCookieDev/handytools" target="_blank">Open on Github</a>
+        </div>
+        <div class="requirements">
+            <h3>Project Requirements</h3>
+            <ul>
+                <li>Python 3.6+</li>
+                <li>pip (Python package manager)</li>
+                <li>colorama~=0.4.6</li>
+                    <li>Send2Trash~=1.8.3</li>
+                    <li>rich~=13.8.0</li>
+                    <li>psutil~=6.0.0</li>
+                    <li>screeninfo~=0.8.1</li>
+                    <li>black~=24.10.0</li>
+                    <li>setuptools~=68.2.0</li>
+                    <li>Pygments~=2.19.1</li>
+            </ul>
+        </div>
+        <div class="docs">
+            <a href="https://github.com/CyberCookieDev/handytools" target="_blank">Read the documentation.</a>
+
+        </div>
+    </section>
+
+    <footer>
+        <p>Need help? Check out the <a href="#">documentation</a> or contact us on GitHub.</p>
+    </footer>
+
+    <script>
+        function copyToClipboard(text) {
+            const tempInput = document.createElement("input");
+            document.body.appendChild(tempInput);
+            tempInput.value = text;
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+            alert('Copied to clipboard: ' + text);
+        }
+    </script>
+</body>
+</html>

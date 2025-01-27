@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Name - Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #121212;
+            color: #eee;
+            scroll-behavior: smooth; /* Smooth scroll */
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            max-width: 1200px;
+        }
+
+        /* Sticky Navigation Bar */
+        nav {
+            position: sticky;
+            top: 0;
+            background: #1e1e1e;
+            padding: 1rem 0;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #6a1b9a;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #6a1b9a, #3f51b5);
+            color: #fff;
+            padding: 2rem 0;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            margin-top: 0.5rem;
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section h2 {
+            margin-bottom: 1.5rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* Profile Section with GitHub Link */
+        .about {
+            display: flex;
+            align-items: center;
+        }
+
+        .about img {
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .about p {
+            font-size: 1.1rem;
+        }
+
+        .about a {
+            color: #6a1b9a;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Project Tiles */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Less wide tiles */
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .project {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .project p {
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .project button {
+            background-color: #6a1b9a;
+            color: #fff;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .project button:hover {
+            background-color: #3f51b5;
+            transform: scale(1.1);
+        }
+
+        /* Skill Showcase */
+        .skills {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .skill {
+            background: #1e1e1e;
+            border-radius: 8px;
+            padding: 2rem;
+            width: 300px; /* Making skills bigger */
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+        }
+
+        .skill h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar {
+            background-color: #333;
+            border-radius: 10px;
+            height: 10px;
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar div {
+            height: 100%;
+            background-color: #6a1b9a;
+            border-radius: 10px;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 80%;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            background-color: #1e1e1e;
+            color: #fff;
+        }
+
+        .contact-form button {
+            background-color: #6a1b9a;
+            color: #fff;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #3f51b5;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e1e1e;
+            color: #bbb;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        footer a {
+            color: #6a1b9a;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-out;
+        }
+        .github {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .github a {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background: #24292e;
+            color: #fff;
+            border-radius: 5px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .github a:hover {
+            background: #444;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Sticky Navigation -->
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header class="fade-in">
+        <div class="container">
+            <h1>Your Name</h1>
+            <p>Welcome to my portfolio! Here's a showcase of my projects and skills.</p>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section class="section about fade-in" id="about">
+        <div class="container">
+            <h2>About Me</h2>
+
+            <!-- Profile Section -->
+            <div style="display: flex; align-items: center;">
+                <!-- Profile Picture (Placeholder) -->
+                <img src="pfp.png" alt="Your Profile Picture" style="border-radius: 50%; margin-right: 20px; width: 150px; height: 150px;">
+
+
+                <!-- About Text and GitHub Link -->
+                <div>
+                    <p>Hello! I'm CyberCookieDev, a Python Developer with focus on building solutions for everyday problems, and also competetive programming. Coding along with math are my hobbies. If you want to help me with expanding my projects or do some collaborative work, feel free to contact me on GitHub.</p>
+                </div>
+            </div>
+            <!-- GitHub Link -->
+            <div class="github">
+                <a href="https://github.com/CyberCookieDev/handytools" target="_blank">Open on Github</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section projects fade-in" id="projects">
+        <div class="container">
+            <h2>My Projects</h2>
+
+            <!-- Project Tile 1 -->
+            <div class="project">
+                <h3>Python Project</h3>
+                <p>This is a Python project that helps with [insert brief description here]. It uses [list technologies or key features].</p>
+                <button href= "handytools.html">View Project</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills fade-in" id="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="skills">
+                <div class="skill">
+                    <h4>Python</h4>
+                    <div class="progress-bar"><div style="width: 90%;"></div></div>
+                    <p>Experienced in Python programming for web development, data science, and automation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="fade-in">
+        <p>&copy; 2025 Your Name. All rights reserved.</p>
+        <p>Follow me on <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>, 
+           <a href="https://github.com/yourusername" target="_blank">GitHub</a>, 
+           and other platforms.</p>
+    </footer>
+</body>
+</html>
